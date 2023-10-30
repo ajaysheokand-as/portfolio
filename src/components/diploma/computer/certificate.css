@@ -1,0 +1,121 @@
+.main-container{
+    /* background-image: url( "../../../assets/images/Certificate.jpeg"); */
+}
+.position-absolute{
+    position: absolute;
+    font-weight: 500;
+    font-size: 16px;
+}
+.img{
+    top: 75px;
+    left: 0;
+    z-index: -1;
+    height: 1100px;
+    @media print {
+        top: 0;
+    }
+    
+}
+.name{  
+    top: 645px;
+    left: 200px;
+    @media print {
+        top: calc(645px - 75px);
+    }
+}
+
+.rollNo{
+    top: 509px;
+    left: 160px;
+    @media print {
+        top: calc(509px - 75px);
+    }
+}
+
+.enrollmentNo{
+    top: 538px;
+    left: 200px;
+    @media print {
+        top: calc(538px - 75px);
+    }
+}
+
+.motherName{
+    top: 646px;
+    left: 520px;
+    @media print {
+        top: calc(646px - 75px);
+    }
+}
+
+.fatherName{
+    top: 690px;
+    left: 200px;
+    @media print {
+        top: calc(690px - 75px);
+    }
+}
+
+.dob{
+    top: 690px;
+    left: 570px;
+    @media print {
+        top: calc(690px - 75px);
+    }
+}
+
+.enrollmentNo2{
+    top: 733px;
+    left: 200px;
+    @media print {
+        top: calc(733px - 75px);
+    }
+}
+
+.course{
+    top: 775px;
+    left: 290px;
+    @media print {
+        top: calc(775px - 75px);
+    }
+}
+
+.instituteName{
+    top: 820px;
+    left: 140px;
+    @media print {
+        top: calc(820px - 75px);
+    }
+}
+
+.grade{
+    top: 865px;
+    left: 200px;
+    @media print {
+        top: calc(865px - 75px);
+    }
+}
+
+.sessionStart{
+    top: 865px;
+    left: 420px;
+    @media print {
+        top: calc(865px - 75px);
+    }
+}
+
+.sessionEnd{
+    top: 865px;
+    left: 575px;
+    @media print {
+        top: calc(865px - 75px);
+    }
+}
+
+.duration{
+    top: 909px;
+    left: 401px;
+    @media print {
+        top: calc(909px - 75px);
+    }
+}

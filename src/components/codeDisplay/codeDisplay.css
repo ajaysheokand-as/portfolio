@@ -1,0 +1,33 @@
+.code-display {
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px;
+
+  }
+  
+  .code-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .code-header button {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .code-header button:hover {
+    background-color: #555;
+  }
+  
+  .code-body {
+    padding-bottom: 0px;
+  }

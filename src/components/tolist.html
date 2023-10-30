@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>To-Do List</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .completed {
+        text-decoration: line-through;
+      }
+
+      .delete {
+        float: right;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <ul id="list"></ul>
+    <input type="text" id="new-task" />
+    <button id="add-task">Add Task</button>
+
+    <script>
+      // Get the list element
+      const list = document.getElementById("list");
+
+      // Get the new task input element
+      const newTaskInput = document.getElementById("new-task");
+
+      // Get the add task button
+      const addTaskButton = document.getElementById("add-task");
+
+      // Add an event listener to the add task button
+      addTaskButton.addEventListener("click", function () {
+        // Get the text from the new task input element
+        const newTaskText = newTaskInput.value;
+
+        // Create a new list item element
+        const listItem = document.createElement("li");
+
+        // Set the text content of the list item element
+        listItem.textContent = newTaskText;
+
+        // Add a completed class to the list item element
+        listItem.classList.add("completed");
+
+        // Create a delete button element
+        const deleteButton = document.createElement("button");
+
+        // Set the text content of the delete button element
+        deleteButton.textContent = "Delete";
+
+        // Add a delete class to the delete button element
+        deleteButton.classList.add("delete");
+
+        // Add an event listener to the delete button element
+        deleteButton.addEventListener("click", function () {
+          // Remove the list item element from the list
+          listItem.remove();
+        });
+
+        // Append the delete button element to the list item element
+        listItem.appendChild(deleteButton);
+
+        // Append the list item element to the list
+        list.appendChild(listItem);
+
+        // Clear the new task input element
+        newTaskInput.value = "";
+      });
+    </script>
+  </body>
+</html>
