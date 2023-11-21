@@ -11,6 +11,7 @@ import { LabHomePg } from "./components/medical/LabHomePg";
 import { Report } from "./components/medical/Report";
 import { StateProvider } from "./components/medical/Contexts";
 import Category from "./components/medical/Category";
+import { Navbar } from "./components/navbar/Navbar";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Auth />
       </authContext.Provider> */}
 
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route path="/" element={<LabHomePg />} />
           <Route path="/context" element={<ContextHome />} />
