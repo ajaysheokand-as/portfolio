@@ -61,6 +61,45 @@ const callsToAction = [
   { name: "Contact Us", href: "#", icon: PhoneIcon },
 ];
 
+const tools = [
+  {
+    name: "Lab Reports",
+    description: "Medical test reports",
+    href: "/lab",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Hartron",
+    description: "Let's prepare for hartron exam for DEO and Programmer",
+    href: "/hartron",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "E-Commerce",
+    description: "Add Your products and create a e-commerce marketplace",
+    href: "/products",
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: "Calculators",
+    description: "Let's use Different type of calculator",
+    href: "/calculator",
+    icon: FingerPrintIcon,
+  },
+  {
+    name: "Billing Portal",
+    description: "Let's manage your bills and get reports",
+    href: "billing",
+    icon: SquaresPlusIcon,
+  },
+  {
+    name: "iimsd",
+    description: "Manage diplomas for the IIMSD",
+    href: "/iimsd",
+    icon: ArrowPathIcon,
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -94,8 +133,10 @@ export const Navbar = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
+       
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
+           {/* Menus for React Practice */}
+        { window.document.location.host.includes("localhost") && <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Hooks
               <ChevronDownIcon
@@ -156,6 +197,69 @@ export const Navbar = () => {
                 </div>
               </Popover.Panel>
             </Transition>
+          </Popover>}
+          {/* Menus for Tools */}
+          <Popover className="relative">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+              Tools
+              <ChevronDownIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
+            </Popover.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="p-4">
+                  {tools.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <item.icon
+                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="flex-auto">
+                        <Link
+                          to={item.href}
+                          className="block font-semibold text-gray-900"
+                        >
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </Link>
+                        <p className="mt-1 text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {callsToAction.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                    >
+                      <item.icon
+                        className="h-5 w-5 flex-none text-gray-400"
+                        aria-hidden="true"
+                      />
+                      {item.name}
+                    </a>
+                  ))}
+                </div> */}
+              </Popover.Panel>
+            </Transition>
           </Popover>
 
           <Link to="/">Home</Link>
@@ -168,15 +272,6 @@ export const Navbar = () => {
             Company
           </a> */}
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link
-            to="/settingd
-            "
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Setting <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>

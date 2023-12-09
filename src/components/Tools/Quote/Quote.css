@@ -1,0 +1,111 @@
+ .dark {
+    /* background-color: #303633; */
+    background-color: #8BE8CB;
+    width: 100vw;
+    /* height: 100vh; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  .blueish {
+    background-color: #7EA2AA;
+    width: 100vw;
+    /* height: 100vh;
+    display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  .green {
+    background-color: #8BE8CB;
+    /* width: 100vw;
+    height: 100vh;
+    display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  .gray {
+    background-color: #888DA7;
+    width: 100vw;
+    /* height: 100vh;
+    display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+  .purple {
+    background-color: #9C7A97;
+    /* width: 100vw;
+    height: 100vh; */
+    /* display: flex;
+    justify-content: center; */
+    align-items: center;
+  }
+  #quote-box {
+    /* background-color: rgb(249, 232, 232); */
+    background-image: url("https://picsum.photos/800/500");
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #quote-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #text {
+    background-color: black;
+    font-family: ariel;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 0px 75px;
+    width: 100%;
+    color: white;
+  }
+  
+  #author {
+    background-color: green;
+    font-family: ariel;
+    font-size: 18px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+  }
+  
+  #new-quote {
+    /* border: 2px solid black; */
+    background-color: black;
+    color:white;
+    border-radius: 3px;
+    padding: 8px 10px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  #new-quote:hover{
+    background-color: white;
+    color: black;
+  }
+  
+  #tweet-quote {
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  #bottom {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+  
+  #count {
+    padding-top: 10px;
+  }

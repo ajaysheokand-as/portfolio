@@ -7,7 +7,7 @@ export const SimpleTable = (props) => {
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
-            <table className="min-w-full text-center text-sm font-light">
+            <table className="min-w-full text-left text-sm font-light">
               <thead className="font-medium">
                 <tr>
                   <th scope="col" className="px-6 py-4">
@@ -35,7 +35,7 @@ export const SimpleTable = (props) => {
                       item.category && (
                         <>
                           <tr key={index}>
-                            <th>{item.category}</th>
+                            <td>{item.category}</td>
                           </tr>
 
                           {item.data.map((test, testIndex) => {

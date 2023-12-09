@@ -8,10 +8,13 @@ import { UseRef } from "./components/hooks_code/UseRef";
 import { Certificate } from "./components/diploma/computer/Certificate";
 import { ReduxHome } from "./components/pages/ReduxHome";
 import { LabHomePg } from "./components/medical/LabHomePg";
-import { Report } from "./components/medical/Report";
 import { StateProvider } from "./components/medical/Contexts";
 import Category from "./components/medical/Category";
 import { Navbar } from "./components/navbar/Navbar";
+import { HartronPracticeSet } from "./components/Tools/Hartron/HartronPracticeSet";
+import { PinCode } from "./components/Tools/PinCode/PinCode";
+import { Portfolio } from "./components/portfolio/Portfolio";
+// import { PinCode } from "./components/Tools/PinCode/PinCode";
 
 function App() {
   return (
@@ -24,20 +27,24 @@ function App() {
         <Auth />
       </authContext.Provider> */}
 
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
-          <Route path="/" element={<LabHomePg />} />
+          <Route path="*" element={<Portfolio/>} />
+          <Route path="/" element={<Portfolio />} />
           <Route path="/context" element={<ContextHome />} />
           <Route exact path="/useMemo" element={<Memo />}></Route>
           <Route exact path="/useState" element={<UseState />}></Route>
           <Route exact path="/useRef" element={<UseRef />}></Route>
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/computer" element={<Certificate />} />
+          <Route path="/iimsd" element={<Certificate />} />
           <Route path="/redux" element={<ReduxHome />} />
           <Route path="/lab" element={<LabHomePg />} />
-          <Route path="/report" element={<Report />} />
           <Route path="/setting" element={<Category />} />
+          <Route path="/hartron" element={<HartronPracticeSet/>} />
+          {/* <Route path="/pin-code" element={<PinCode/>} /> */}
+          {/* <Route path="/pin-code" element={<PinCode/>} /> */}
+          
         </Routes>
       </div>
     </StateProvider>
