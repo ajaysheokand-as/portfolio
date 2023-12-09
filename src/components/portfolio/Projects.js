@@ -9,7 +9,7 @@ export const Projects = () => {
             Projects
       </div>
       <div className="projects-description">
-      A select number of projects
+      Transforming ideas into digital reality: Crafting innovative websites for a seamless user experience.
       </div>
       <div class="projects-card flex flex-wrap justify-evenly" id="1">
         {
