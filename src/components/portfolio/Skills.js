@@ -1,16 +1,16 @@
 import React from 'react';
-import {SkillsItem} from "../../data/SkillsLogo"
 
 
-export const Skills = () => {
+export const Skills = (props) => {
+  console.log("props Data=>", props);
   return (
-    <div className='skills' id='skills'>
+    <div className='skills pt-5' id={props.id}>
         <div className='skills-title'>
-            Skills
+            {props.title}
         </div>
         <div className='skills-item'>
             {
-                SkillsItem.map((item, index) => {
+                props.data.map((item, index) => {
                    return <img key={index} src={item.img} alt={item.title} />
                 })
             }

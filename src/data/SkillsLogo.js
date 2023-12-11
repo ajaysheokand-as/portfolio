@@ -11,6 +11,13 @@ import JayJones from "../assets/images/portfolio/projects/JayJones.png";
 import socialSeeds from "../assets/images/portfolio/projects/socialSeeds.png";
 import meetRibbon from "../assets/images/portfolio/projects/meetRibbon.png"
 
+import jira from "../assets/images/portfolio/tools/jira.png";
+import github from "../assets/images/portfolio/tools/git.jpeg";
+import bitbucket from "../assets/images/portfolio/tools/bitbucket.png";
+import figma from "../assets/images/portfolio/tools/figma.png";
+import slack from "../assets/images/portfolio/tools/slack.webp";
+import vscode from "../assets/images/portfolio/tools/vscode.png"
+
  export const SkillsItem = [
     {
         title: "ReactJs",
@@ -38,6 +45,34 @@ import meetRibbon from "../assets/images/portfolio/projects/meetRibbon.png"
     }
 
 ];
+
+export const tools = [
+    {
+        title: "Git Hub",
+        img: github
+    },
+    {
+        title: "Jira",
+        img:jira
+    },
+    {
+        title: "Figma",
+        img: figma
+    },
+    {
+        title: "Bit Bucket",
+        img: bitbucket
+    },
+    {
+        title: "Slack",
+        img: slack
+    },
+    {
+        title:"Visual Code Studio",
+        img: vscode
+    }
+
+]
 
 export const projectsData = [
     {

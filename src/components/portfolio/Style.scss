@@ -4,7 +4,23 @@
     // height: 100vh;
 }
 
+.chat-icon{
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 20px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     padding: 24px 100px;
     background-color: white;
 
@@ -35,6 +51,7 @@
 }
 
 .header {
+    margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -43,6 +60,8 @@
 
     @media (max-width:480px) {
         padding: 44px 20px;
+        margin-top: 120px;
+
     }
 
     &-left {
@@ -216,6 +235,15 @@
 
     &-card {
         padding-top: 24px;
+    }
+
+    &-footer{
+        color: #ffff;
+        margin-top: 20px;
+
+        a{
+            color: green;
+        }
     }
 
 }
