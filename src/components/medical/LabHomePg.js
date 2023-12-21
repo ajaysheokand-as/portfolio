@@ -297,11 +297,20 @@ export const LabHomePg = () => {
             <div className="mt-2.5">
               <select
                 onChange={(e) => {
+                  // console.log("testData Data=>", testData);
+                  const selectedTestCategory = testDataDefault.filter((test) => 
+                    test.category === testData.category
+                  )
+                  console.log("Filtered Data=>", selectedTestCategory[0].tests, testData, e.target.value);
+                  const selectedTest = selectedTestCategory[0].tests.filter((item)=>item.testName == e.target.value);
+
+                  console.log("Selected Test =>", selectedTest);
                   setTestData({
                     ...testData,
-                    data: { ...testData.data, testName: e.target.value },
+                    data: { ...testData.data, testName: e.target.value, defaultValue: selectedTest[0]?.testRefValue || selectedTest[0]?.testRefValueM || selectedTest[0]?.testRefValueF, unit:  selectedTest[0].unit  },
                   });
                 }}
+
                 id="test"
                 name="test"
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

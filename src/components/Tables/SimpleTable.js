@@ -51,7 +51,7 @@ export const SimpleTable = (props) => {
                                     {test.testValue}
                                   </td>
                                   <td className="whitespace-nowrap px-6 py-4">
-                                  {test.range}
+                                  {test.defaultValue}
                                   </td>
                                   <td className="whitespace-nowrap px-6 py-4">
                                     {test.unit}
