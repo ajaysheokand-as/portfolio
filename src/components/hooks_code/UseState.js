@@ -1,10 +1,12 @@
 import React from "react";
 import { useStateData } from "../../data/useStateKeyPoints";
 import { CodeDisplay } from "../codeDisplay/CodeDisplay";
+import { Navbar } from "../navbar/Navbar";
 
 export const UseState = () => {
   return (
-    <div className="p-4">
+    <div className=" ">
+      <Navbar/>
       <div className="font-black text-2xl m-2">
         Let's Understand about useState
       </div>

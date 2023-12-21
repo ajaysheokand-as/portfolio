@@ -17,6 +17,7 @@ import {
 } from "@heroicons/react/20/solid";
 
 import { Link } from "react-router-dom";
+import AjAySHEOKAND from "../../assets/images/portfolio/AjSHEOKAND.jpeg"
 
 const menuItems = [
   {
@@ -108,20 +109,24 @@ export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white print:hidden">
+    <>
+    <div className="h-80"></div>
+    <header className="bg-white navbar print:hidden">
+      
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex items-center justify-between p-2"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="font-extrabold w-auto h-5">React Practice</span>
+          <Link to="/" className="-m-1.5 p-1.5">
+            {/* <span className="font-extrabold w-auto h-5">React Practice</span> */}
+            <img src={AjAySHEOKAND} alt='logo'/>
             {/* <img
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt=""
             /> */}
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -367,5 +372,6 @@ export const Navbar = () => {
         </Dialog.Panel>
       </Dialog>
     </header>
+    </>
   );
 };
