@@ -17,6 +17,7 @@ import { Portfolio } from "./components/portfolio/Portfolio";
 // import { PinCode } from "./components/Tools/PinCode/PinCode";
 
 function App() {
+  const isPortfolioRoute = window.location.pathname === '/' || window.location.pathname === '/learn-more';
   return (
     <StateProvider>
       <div>
@@ -27,7 +28,7 @@ function App() {
         <Auth />
       </authContext.Provider> */}
 
-        {/* <Navbar /> */}
+        {isPortfolioRoute ? "" : <Navbar />}
         <Routes>
           <Route path="*" element={<Portfolio/>} />
           <Route path="/" element={<Portfolio />} />
@@ -42,6 +43,7 @@ function App() {
           <Route path="/lab" element={<LabHomePg />} />
           <Route path="/setting" element={<Category />} />
           <Route path="/hartron" element={<HartronPracticeSet/>} />
+          <Route path="/learn-more" element={<UseState/>} />
           {/* <Route path="/pin-code" element={<PinCode/>} /> */}
           {/* <Route path="/pin-code" element={<PinCode/>} /> */}
           

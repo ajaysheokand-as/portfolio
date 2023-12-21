@@ -7,8 +7,8 @@ export const Contact = () => {
         <div className='contact-title'>
             Contact Me
         </div>
-        <div className='flex justify-around'>
-            <div>
+        <div className='flex sm:flex-column md-flex-row justify-around'>
+            <div className='sm:hidden lg:block'>
                 <img src={standingMan} alt='Contact Us'/>
             </div>
         <form className="contact-form">

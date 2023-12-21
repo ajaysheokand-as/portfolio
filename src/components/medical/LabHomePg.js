@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
 // import { Report } from "./Report";
 import { SimpleTable } from "../Tables/SimpleTable";
+import { testDataDefault } from "../../data/Medical/TestData";
 
 export const LabHomePg = () => {
   const [isEdit, setIsEdit] = useState(true);
+  // const [s_no, setS_No] = useState(Date.now())
   const [patientData, setPatientData] = useState({
     name: "",
     age: "",
@@ -70,6 +72,9 @@ export const LabHomePg = () => {
       }
     }
   };
+  // useEffect(() => {
+  //   setS_No(Date.now())
+  // }, []);
 
   useEffect(() => {
     !isEdit && window.print();
@@ -117,10 +122,10 @@ export const LabHomePg = () => {
         className="container mx-auto mt-16 sm:mt-20"
       >
         <div className="flex flex-row justify-between mb-4">
-          <div>Report No. : {allTest.SNo}</div>
-          <div>Report Date. : {date.toLocaleDateString()}</div>
+          {/* <div>Report No. : {s_no}</div> */}
+          <div><span>Report Date. : </span> {date.toLocaleDateString()}</div>
         </div>
-        <div className="m-1 flex flex-row justify-between flex-wrap mb-4">
+        <div className="m-1 flex flex-row justify-between flex-wrap pb-4">
           <div>
             <label
               htmlFor="patient-name"
@@ -242,8 +247,8 @@ export const LabHomePg = () => {
                   className="block rounded-md border-0 px-3.5 py-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 >
                   <option>Select</option>
-                  <option value="Dr. Sunil">Dr. Sunil</option>
-                  <option value="Dr. Amit">Dr. Amit </option>
+                  <option value="Dr. Manish Kumar Varshney">Dr. Manish Kumar Varshney</option>
+                  {/* <option value="Dr. Amit">Dr. Amit </option> */}
                 </select>
               ) : (
                 patientData.doctor
@@ -251,9 +256,9 @@ export const LabHomePg = () => {
             </div>
           </div>
         </div>
-        <hr></hr>
+        
 
-        <div className="flex flex-wrap justify-between mt-4 print:hidden">
+        <div className="flex flex-wrap justify-between mt-4 print:hidden pb-2">
           <div>
             <label
               htmlFor="category"
@@ -271,9 +276,14 @@ export const LabHomePg = () => {
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               >
                 <option value="select">Select</option>
-                <option value="Category 2">Category 2</option>
-                <option value="Category 3">Category 3</option>
-                <option value="Category 4">Category 4</option>
+                {
+                 testDataDefault && testDataDefault.map((item, index)=>{
+                    return (
+                      <option value={item.category} key={index}>{item.category}</option>
+                    )
+                  })
+                }
+               
               </select>
             </div>
           </div>
@@ -297,9 +307,22 @@ export const LabHomePg = () => {
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               >
                 <option value="select">Select</option>
-                <option value="test 2">test 2</option>
-                <option value="test 3">test 3</option>
-                <option value="test 4">test 4</option>
+                {
+                  testDataDefault && testDataDefault.map((item) => {
+                    return (
+                      item.category === testData.category &&
+                      <>
+                            { item.tests.map((test, index)=>{
+                        //  console.log("This is test=>", test)
+                         return  <option value={test.testName} key={index}>{test.testName}</option>
+                        }) }
+                      </>
+                    )
+                    
+                  })
+                }
+                
+               
               </select>
             </div>
           </div>
@@ -339,13 +362,13 @@ export const LabHomePg = () => {
           </div>
         </div>
         <SimpleTable data={allTest} />
-        <div className="mt-10 flex print:hidden">
+        <div className="mt-10 flex print:hidden fixed bottom-3">
           <button
             type="button"
             onClick={handlePrintReport}
             className="block m-1 rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Print Report
+            Save & Print Report
           </button>
           {/* <button
             type="button"

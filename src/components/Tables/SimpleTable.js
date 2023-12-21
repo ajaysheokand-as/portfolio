@@ -8,26 +8,28 @@ export const SimpleTable = (props) => {
         <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
           <div className="overflow-hidden">
             <table className="min-w-full text-left text-sm font-light">
-              <thead className="font-medium">
+              <thead className="font-medium" style={{borderBottom: " 2px solid black", borderTop: " 2px solid black"}}>
                 <tr>
                   <th scope="col" className="px-6 py-4">
-                    Test Name
+                    Investigation
                   </th>
                   <th scope="col" className="px-6 py-4">
-                    Results
+                    Result
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Reference Value
                   </th>
                   <th scope="col" className="px-6 py-4">
                     Unit
-                  </th>
-                  <th scope="col" className="px-6 py-4">
-                    Range
                   </th>
                   {/* ToDo */}
                   {/* <th scope="col" className="px-6 py-4 print:hidden">
                     Action
                   </th> */}
                 </tr>
+               
               </thead>
+             
               <tbody>
                 {data?.length > 0 &&
                   data.map((item, index) => {
@@ -35,7 +37,7 @@ export const SimpleTable = (props) => {
                       item.category && (
                         <>
                           <tr key={index}>
-                            <td>{item.category}</td>
+                            <td colSpan={4}><span class="text-lg ... p-2">{item.category}</span></td>
                           </tr>
 
                           {item.data.map((test, testIndex) => {
@@ -49,10 +51,10 @@ export const SimpleTable = (props) => {
                                     {test.testValue}
                                   </td>
                                   <td className="whitespace-nowrap px-6 py-4">
-                                    {test.unit}
+                                  {test.range}
                                   </td>
                                   <td className="whitespace-nowrap px-6 py-4">
-                                    {test.range}
+                                    {test.unit}
                                   </td>
                                   {/* ToDo */}
                                   {/* <td className="whitespace-nowrap px-6 py-4 print:hidden">

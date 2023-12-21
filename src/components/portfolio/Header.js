@@ -3,7 +3,7 @@ import DP from "../../assets/images/portfolio/DP.jpg"
 
 export const Header = () => {
   return (
-    <div className='header'>
+    <div className='header' id='header'>
         <div className='header-left'>
             <div className='header-left-text'>
             Hi 👋, I'm 
